@@ -5,119 +5,124 @@ from teacher_class import *
 
 # ====== CLASS EXERCISE =====
 
-# 1. As a receptionist of the University, I should be able to create a Student:
-
-# declare a list of students
-list_of_students = []
-# student_id_count variable
 student_id = 0
-
-# create the while loop:
-while True:
-    # increment the counter
-    student_id += 1
-    # ask for first name
-    input("What is your first name?\n")
-    # ask for second name
-    input('"What is your second name?\n')
-
-    user_input = ''
-    # if user input = quit,
-    if user_input != 'quit':
-        # quit the loop
-        break
-
-    # create students object from inputs
-    list_of_students(Student)
-    # add students to list
-    list_of_students.append(Student)
-    print(list_of_students)
-
-# 2. As a Receptionist of the University, I should be able to create a Teacher:
-
-# declare a list of teachers
-list_of_teachers = []
-# teacher_id_count variable
 teacher_id = 0
-# create the while loop:
-while True:
-    # increment the counter
-    teacher_id += 1
-    # ask for first name
-    input("What is your first name?\n")
-    # ask for second name
-    input("What is your second name?\n")
 
-    user_input = ''
-    # if user input = quit,
-    if user_input != 'quit':
-        # quit the loop
-        break
-    # create teacher object from inputs
-    list_of_teachers(Teacher)
-    # add teacher to list
-    list_of_teachers.append(Teacher)
-    print(list_of_teachers)
+user_input = ''
 
-# 3. As a Receptionist of the University, I should be able to create a workshop:
+list_of_students = []
 
-# create a list for workshops
+list_of_teachers = []
+
 list_of_workshop = []
-# while loop
+
 while True:
 
-    # ask for subject
-    input("What is your subject of study?\n")
-    # ask for list of attendants
-    list_of_students = []
-    # ask for teacher name
-    list_of_teachers = []
-# adding workshop to list of workshops
-list_of_workshop.append(Workshop)
+    student_id += 1
+    teacher_id += 1
 
-# 4. As a Receptionist of the University, I should be able to create a Workshop:
+    print('')
+    user_input = input("Press 1 for Student, Press 2 for Teacher OR Press 3 to view the Workshops: \n")
+    if user_input == '1':
 
 
+        print("============ ADDING A STUDENT ============")
+        first_name = input("What is your first name?\n")
+        last_name = input("What is your second name?\n")
+        student = Student(first_name, last_name, student_id)
 
-# 5. As a Receptionist of the University, I should be able add skills to a Student Object
+        ## ========== FORMATTING FOR STUDENTS =========
+        i = 'GREAT!!! You Have Selected '
+        ii = ' Enjoy Your Scare Workshop'
 
-# create a list of skills
+        x = 'NICE NICE!!! You Must Be An Expert In '
+        xx = 'Have A Good SCAAARE!!!'
 
-def super_strength_skill(Student):
-    return('STRENGTH')
+        workshop = input("Enter the workshop code you want to study: 'EEK', 'EKΘ', 'HSS', 'PNK', 'XΦA' 'AEA'\n")
+        if workshop == 'EEK':
+            print(f'{i} Computer Science.{ii}')
 
-def shape_shifting_skill(Student):
-    return('SHAPE SHIFTER')
+        elif workshop == 'EKΘ':
+            print(f'{x}Further & Advanced Maths. {xx}')
 
-def super_speed_skill(Student):
-    return('SPEED')
+        elif workshop == 'HSS':
+            print(f'{i} Bio Medical Science. {i}')
 
-def mind_control_skill(Student):
-    return('TELEPATHY')
+        elif workshop == 'PNK':
+            print(f'{x} Physical & Mechanical Engineering. {xx}')
 
-def teleportation_skill(Student):
-    return('TELEPORT')
+        elif workshop == 'XΦA':
+            print(f'{i}Medicine. {xx}')
 
-# 6. As a Receptionist of the University, I should be able to list all of the Student's Skills
+        elif workshop == 'AEA':
+            print(f'{x}Sociology & Psychology.{ii}')
+
+        else:
+            print("!!!ENTER THE CORRECT WORKSHOP CODE (PRESS '3')!!!")
+
+        list_of_students.append(Student)
+        # print(list_of_students)
 
 
+    elif user_input == '2':
+
+        print("============ ADDING A TEACHER ============")
+        first_name = input("What is your first name?\n")
+        last_name = input("What is your second name?\n")
+        teacher = Teacher(first_name, last_name, teacher_id)
+
+        # ========== FORMATTING FOR TEACHERS =========
+        i = 'GREAT!!! You Will Be Leading '
+        ii = ''
+
+        x = ''
+        xx = ''
+
+        workshop = input("Enter the workshop code to lead: 'EEK', 'EKΘ', 'HSS', 'PNK', 'XΦA' 'AEA'\n")
+        if workshop == 'EEK':
+            print(f'{i} Computer Science')
+
+        elif workshop == 'EKΘ':
+            print('Further & Advanced Maths')
+
+        elif workshop == 'HSS':
+            print('Bio Medical Science')
+
+        elif workshop == 'PNK':
+            print('Physical & Mechanical Engineering')
+        elif workshop == 'XΦA':
+            print('Medicine')
+
+        elif workshop == 'AEA':
+            print('Sociology & Psychology')
+
+        else: print("!!!ENTER THE CORRECT WORKSHOP CODE (PRESS '3')!!!")
+
+        list_of_teachers.append(Teacher)
+        # print(list_of_teachers)
+
+    elif user_input == '3':
+
+        print("==============================================================")
+        print("============WORKSHOP==========||=============CODE=============")
+        print('')
+        print("These Are The Workshops Currently Taking Place At MonsterInc University: ")
+        print('')
+        print("Computer Science : EEK")
+        print("Further & Advanced Maths : EKΘ")
+        print("Bio Medical Science : HSS")
+        print("Physical & Mechanical Engineering : PNK")
+        print("Medicine : XΦA")
+        print("Sociology & Psychology : AEA")
+        print('')
+
+        list_of_workshop.append(Workshop)
 
 
-# ====== CLASS EXAMPLE ======
+        # print(list_of_workshop)
 
-# student1 = Student('Van', 'Helsing', 1)
-# student2 = Student('Mona The', 'Vampire', 2)
-# student3 = Student('The Boogey', 'Man', 3)
-#
-# first_name = input('Whats your first name? \n')
-# last_name = input('Whats your second name? \n')
-# # print(student.first_name, student.last_name)
-#
-# print(student1)
-# print(student1.first_name, student1.last_name)
-#
-# print(student2)
-# print(student2.first_name, student2.last_name)
-#
-# print(student3)
-# print(student3.first_name, student3.last_name)
+        # user_input = ''
+        # if user_input != 'quit':
+        #     break
+
+        # input("What is your subject of study?\n")

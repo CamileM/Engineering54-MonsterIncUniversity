@@ -7,8 +7,5 @@ class Teacher(Monster):
         super().__init__(first_name, last_name)
         self.teacher_id = teacher_id # SHOULD BE PRIVATE __teacher_id
 
-
-    def create_teacher(self):
-        self.first_name = input('What is your First Name? \n')
-        self.last_name = input('What is your Second Name? \n')
+    # ==== TEACHERS WILL BE PROFICIENT IN 1 SKILL ====
 
